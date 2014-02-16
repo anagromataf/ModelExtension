@@ -6,10 +6,13 @@
 //  Copyright (c) 2014 Tobias Kräntzer. All rights reserved.
 //
 
+#import "ModelExtension.h"
+
 #import <XCTest/XCTest.h>
 
 @interface ModelExtensionTests : XCTestCase
-
+@property (nonatomic, strong) NSManagedObjectModel *baseModel;
+@property (nonatomic, strong) NSManagedObjectModel *modelExtension;
 @end
 
 @implementation ModelExtensionTests
@@ -17,18 +20,32 @@
 - (void)setUp
 {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    NSBundle *frameworkBundle = [NSBundle bundleForClass:[self class]];
+    
+    NSURL *baseModelURL = [frameworkBundle URLForResource:@"Base" withExtension:@"momd"];
+    self.baseModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:baseModelURL];
+    
+    NSURL *modelExtension = [frameworkBundle URLForResource:@"Extension" withExtension:@"momd"];
+    self.modelExtension = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelExtension];
 }
 
-- (void)tearDown
-{
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
-}
+#pragma mark Tests
 
-- (void)testExample
+- (void)testExtendedModel
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    NSManagedObjectModel *extendedModel = [self.baseModel modelByExtendingWithModels:@[self.modelExtension]];
+    
+    XCTAssertNotNil(extendedModel);
+
+    NSSet *entityNames = [NSSet setWithArray:[[extendedModel entitiesByName] allKeys]];
+    NSSet *expectedEntityNames = [NSSet setWithObjects:@"Item", @"Collection", @"ExtendedCollection", @"Metadata", nil];
+    XCTAssertEqualObjects(entityNames, expectedEntityNames);
+    
+    NSEntityDescription *collection = [[extendedModel entitiesByName] objectForKey:@"Collection"];
+    NSEntityDescription *extendedCollection = [[extendedModel entitiesByName] objectForKey:@"ExtendedCollection"];
+    XCTAssertNotNil(extendedCollection);
+    XCTAssertEqualObjects(collection, extendedCollection.superentity);
 }
 
 @end

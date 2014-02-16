@@ -6,8 +6,4 @@
 //  Copyright (c) 2014 Tobias Kräntzer. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-@interface ModelExtension : NSObject
-
-@end
+#import "NSManagedObjectModel+ModelExtension.h"
