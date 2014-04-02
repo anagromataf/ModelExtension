@@ -1,36 +1,43 @@
 # Model Extension
 
+`ModelExtension` provides a category on `NSManagedObjectModel` to support extending a model defined in one file by an model defined in an other file.
+
 [![Version](http://cocoapod-badges.herokuapp.com/v/ModelExtension/badge.png)](http://cocoadocs.org/docsets/ModelExtension)
 [![Platform](http://cocoapod-badges.herokuapp.com/p/ModelExtension/badge.png)](http://cocoadocs.org/docsets/ModelExtension)
 
 ## Requirements
 
+`ModelExtension` has no requieremnts beside the obvious requieremnt of `CoreData`.
 
 ## Installation
 
-ModelExtension is available through [CocoaPods](http://cocoapods.org). To install
+`ModelExtension` is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
     pod "ModelExtension"
 
 ## Usage
 
-Start by defining you base model.
-
-![Base Model](base-model.png)
-
-An extension model will be created in the same manner as a _normal_ model. Add the entites you want to use. If you want to build an subentity of an entity defined in the base model, you have to create an abstract entity with the same name. This abstract entity must not have any properties.
-
-![Model Extension](model-extension.png)
-
-In this example the base model defines a _Collection_ and _Item_. The extension model extends the _Collection_ with a custom subentity haveing a reference to _Metadata_.
+An extended model is created by calling the method `-[NSManagedObjectModel modelByExtendingWithModels:]` on the base model with an array of the submodels. This method returns a new combined model.
 
     // Get the base model and the extension
-	NSManagedObjectModel *baseModel = …
-    NSManagedObjectModel *modelExtension = …
+	NSManagedObjectModel *model = …
+    NSManagedObjectModel *subModel = …
 	
 	// Create an extended model
-	NSManagedObjectModel *extendedModel = [baseModel modelByExtendingWithModels:@[modelExtension]];
+	NSManagedObjectModel *extendedModel = [model modelByExtendingWithModels:@[subModel]];
+
+The extension is done by replacing an abstrac entity in the submodel by its concrete entity in the base model. To extend an entity in a base model, an abstract entiy with the same name has to be created in the submodel. This abstract entity must not have any properties.
+
+The example below shows a model with the entities _Collection_ and _Item_ …
+
+![Base Model](images/base-model.png)
+
+… and a submodel with the entity _ExtendedCollection_ wich shouold be a subentity of Collection.
+
+![Model Extension](images/model-extension.png)
+
+Calling `-[NSManagedObjectModel modelByExtendingWithModels:]` will return a model, that sets the entity _Collection_ of the base model as the superentity of the entity _ExtendedCollection_ of the submodel.
 
 ## Author
 
