@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13B42" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Collection" syncable="YES"/>
+    <entity name="ExtendedCollection" parentEntity="Collection" syncable="YES">
+        <relationship name="metadata" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Metadata" inverseName="collection" inverseEntity="Metadata" syncable="YES"/>
+    </entity>
+    <entity name="Metadata" syncable="YES">
+        <relationship name="collection" maxCount="1" deletionRule="Nullify" destinationEntity="ExtendedCollection" inverseName="metadata" inverseEntity="ExtendedCollection" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Collection" positionX="160" positionY="192" width="128" height="45"/>
+        <element name="ExtendedCollection" positionX="160" positionY="270" width="128" height="58"/>
+        <element name="Metadata" positionX="-20" positionY="279" width="128" height="58"/>
+    </elements>
+</model>

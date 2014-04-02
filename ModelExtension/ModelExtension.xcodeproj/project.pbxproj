@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F65E008D18B1299400285C13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65E008C18B1299400285C13 /* Foundation.framework */; };
-		F65E009218B1299400285C13 /* ModelExtension.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F65E009118B1299400285C13 /* ModelExtension.h */; };
-		F65E009418B1299400285C13 /* ModelExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F65E009318B1299400285C13 /* ModelExtension.m */; };
 		F65E009B18B1299400285C13 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65E009A18B1299400285C13 /* XCTest.framework */; };
 		F65E009C18B1299400285C13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65E008C18B1299400285C13 /* Foundation.framework */; };
 		F65E009E18B1299400285C13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65E009D18B1299400285C13 /* UIKit.framework */; };
@@ -21,7 +19,13 @@
 		F65E00C918B129E000285C13 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F65E00B718B129DF00285C13 /* Cocoa.framework */; };
 		F65E00CC18B129E000285C13 /* libModelExtensionOSX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F65E00B618B129DF00285C13 /* libModelExtensionOSX.a */; };
 		F65E00DB18B12A5400285C13 /* ModelExtensionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F65E00A818B1299400285C13 /* ModelExtensionTests.m */; };
-		F65E00DC18B12A5C00285C13 /* ModelExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F65E009318B1299400285C13 /* ModelExtension.m */; };
+		F65E00DF18B12AF800285C13 /* NSManagedObjectModel+ModelExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = F65E00DD18B12AF800285C13 /* NSManagedObjectModel+ModelExtension.h */; };
+		F65E00E018B12AF800285C13 /* NSManagedObjectModel+ModelExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F65E00DE18B12AF800285C13 /* NSManagedObjectModel+ModelExtension.m */; };
+		F65E00E118B12AF800285C13 /* NSManagedObjectModel+ModelExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = F65E00DE18B12AF800285C13 /* NSManagedObjectModel+ModelExtension.m */; };
+		F65E00E418B12CDE00285C13 /* Base.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F65E00E218B12CDE00285C13 /* Base.xcdatamodeld */; };
+		F65E00E518B12CDE00285C13 /* Base.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F65E00E218B12CDE00285C13 /* Base.xcdatamodeld */; };
+		F65E00E818B12D6200285C13 /* Extension.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F65E00E618B12D6200285C13 /* Extension.xcdatamodeld */; };
+		F65E00E918B12D6200285C13 /* Extension.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F65E00E618B12D6200285C13 /* Extension.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +52,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				F65E009218B1299400285C13 /* ModelExtension.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,8 +61,6 @@
 		F65E008918B1299400285C13 /* libModelExtensioniOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libModelExtensioniOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F65E008C18B1299400285C13 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F65E009018B1299400285C13 /* ModelExtension-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ModelExtension-Prefix.pch"; sourceTree = "<group>"; };
-		F65E009118B1299400285C13 /* ModelExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelExtension.h; sourceTree = "<group>"; };
-		F65E009318B1299400285C13 /* ModelExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelExtension.m; sourceTree = "<group>"; };
 		F65E009918B1299400285C13 /* ModelExtensioniOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModelExtensioniOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F65E009A18B1299400285C13 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F65E009D18B1299400285C13 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -71,7 +72,12 @@
 		F65E00BA18B129E000285C13 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F65E00BB18B129E000285C13 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F65E00BC18B129E000285C13 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		F65E00C718B129E000285C13 /* ModelExtensionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModelExtensionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F65E00C718B129E000285C13 /* ModelExtensionOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModelExtensionOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F65E00DD18B12AF800285C13 /* NSManagedObjectModel+ModelExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectModel+ModelExtension.h"; sourceTree = "<group>"; };
+		F65E00DE18B12AF800285C13 /* NSManagedObjectModel+ModelExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectModel+ModelExtension.m"; sourceTree = "<group>"; };
+		F65E00E318B12CDE00285C13 /* Base.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Base.xcdatamodel; sourceTree = "<group>"; };
+		F65E00E718B12D6200285C13 /* Extension.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Extension.xcdatamodel; sourceTree = "<group>"; };
+		F65E00EB18B145A800285C13 /* ModelExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelExtension.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +137,7 @@
 				F65E008918B1299400285C13 /* libModelExtensioniOS.a */,
 				F65E009918B1299400285C13 /* ModelExtensioniOSTests.xctest */,
 				F65E00B618B129DF00285C13 /* libModelExtensionOSX.a */,
-				F65E00C718B129E000285C13 /* ModelExtensionTests.xctest */,
+				F65E00C718B129E000285C13 /* ModelExtensionOSXTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,8 +157,9 @@
 		F65E008E18B1299400285C13 /* ModelExtension */ = {
 			isa = PBXGroup;
 			children = (
-				F65E009118B1299400285C13 /* ModelExtension.h */,
-				F65E009318B1299400285C13 /* ModelExtension.m */,
+				F65E00EB18B145A800285C13 /* ModelExtension.h */,
+				F65E00DD18B12AF800285C13 /* NSManagedObjectModel+ModelExtension.h */,
+				F65E00DE18B12AF800285C13 /* NSManagedObjectModel+ModelExtension.m */,
 				F65E008F18B1299400285C13 /* Supporting Files */,
 			);
 			path = ModelExtension;
@@ -169,6 +176,7 @@
 		F65E00A218B1299400285C13 /* ModelExtensionTests */ = {
 			isa = PBXGroup;
 			children = (
+				F65E00EA18B12DE000285C13 /* Model */,
 				F65E00A818B1299400285C13 /* ModelExtensionTests.m */,
 				F65E00A318B1299400285C13 /* Supporting Files */,
 			);
@@ -194,6 +202,15 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
+		F65E00EA18B12DE000285C13 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F65E00E218B12CDE00285C13 /* Base.xcdatamodeld */,
+				F65E00E618B12D6200285C13 /* Extension.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -201,6 +218,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F65E00DF18B12AF800285C13 /* NSManagedObjectModel+ModelExtension.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,7 +292,7 @@
 			);
 			name = ModelExtensionOSXTests;
 			productName = ModelExtensionTests;
-			productReference = F65E00C718B129E000285C13 /* ModelExtensionTests.xctest */;
+			productReference = F65E00C718B129E000285C13 /* ModelExtensionOSXTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -329,7 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F65E009418B1299400285C13 /* ModelExtension.m in Sources */,
+				F65E00E018B12AF800285C13 /* NSManagedObjectModel+ModelExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +356,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F65E00A918B1299400285C13 /* ModelExtensionTests.m in Sources */,
+				F65E00E818B12D6200285C13 /* Extension.xcdatamodeld in Sources */,
+				F65E00E418B12CDE00285C13 /* Base.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,7 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F65E00DC18B12A5C00285C13 /* ModelExtension.m in Sources */,
+				F65E00E118B12AF800285C13 /* NSManagedObjectModel+ModelExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +374,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F65E00DB18B12A5400285C13 /* ModelExtensionTests.m in Sources */,
+				F65E00E918B12D6200285C13 /* Extension.xcdatamodeld in Sources */,
+				F65E00E518B12CDE00285C13 /* Base.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +516,12 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "ModelExtensionTests/ModelExtensionTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -511,6 +539,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ModelExtension/ModelExtension-Prefix.pch";
 				INFOPLIST_FILE = "ModelExtensionTests/ModelExtensionTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -570,6 +604,12 @@
 				);
 				INFOPLIST_FILE = "ModelExtensionTests/ModelExtensionTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = xctest;
@@ -590,6 +630,12 @@
 				GCC_PREFIX_HEADER = "ModelExtension/ModelExtension-Prefix.pch";
 				INFOPLIST_FILE = "ModelExtensionTests/ModelExtensionTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = xctest;
@@ -641,6 +687,29 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F65E00E218B12CDE00285C13 /* Base.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F65E00E318B12CDE00285C13 /* Base.xcdatamodel */,
+			);
+			currentVersion = F65E00E318B12CDE00285C13 /* Base.xcdatamodel */;
+			path = Base.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		F65E00E618B12D6200285C13 /* Extension.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F65E00E718B12D6200285C13 /* Extension.xcdatamodel */,
+			);
+			currentVersion = F65E00E718B12D6200285C13 /* Extension.xcdatamodel */;
+			path = Extension.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F65E008118B1299400285C13 /* Project object */;
 }
